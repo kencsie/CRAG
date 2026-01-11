@@ -220,7 +220,7 @@ def main():
     args = parser.parse_args()
     args.lower_threshold = -args.lower_threshold
 
-    generator = LLM(model=args.generator_path, dtype="half")
+    generator = LLM(model=args.generator_path, dtype="half", gpu_memory_utilization=0.7)
     sampling_params = SamplingParams(temperature=0.0, top_p=1.0, max_tokens=100, skip_special_tokens=False)
     
     tokenizer = T5Tokenizer.from_pretrained(args.evaluator_path)
