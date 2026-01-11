@@ -3,7 +3,7 @@ from utils import load_file
 import json
 
 INPUT_FILES = {
-    "popqa": "../retrieval_lm/eval_data/popqa_longtail_w_gs.jsonl",
+    "popqa": "../data/popqa/raw/popqa_longtail_w_gs_10.jsonl",
     "pubqa": "../retrieval_lm/eval_data/health_claims_processed.jsonl",
     "bio": "../retrieval_lm/eval_data/factscore_unlabeled_alpaca_13b_retrieval.jsonl",
     "arc_challenge": "../retrieval_lm/eval_data/arc_challenge_processed.jsonl"
