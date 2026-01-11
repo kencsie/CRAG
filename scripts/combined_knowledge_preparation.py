@@ -1,3 +1,5 @@
+import argparse
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--correct_path', type=str)
@@ -10,8 +12,10 @@ def main():
     with open(args.incorrect_path, 'r') as f:
         incorrect_lines = [q.strip()[1:] for q in f.readlines()]
 
+    ambiguous_lines = []
+
     for correct, incorrect in enumerate(zip(correct_lines, incorrect_lines)):
-        ambiguous_lines.append("Knowledge1: " + correct + " [sep] Knowledge2: " + incorrect)
+        ambiguous_lines.append(f"Knowledge1: {correct} [sep] Knowledge2: {incorrect}")
     with open(args.ambiguous_path, 'w') as f:
         f.write('\n'.join(ambiguous_lines))
 
