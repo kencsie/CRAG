@@ -4,10 +4,10 @@ cd scripts
 
 dataset=popqa
 python CRAG_Inference.py \
---generator_path YOUR_GENERATOR_PATH \
---evaluator_path YOUR_EVALUATOR_PATH \
+--generator_path ../models/generation/selfrag_llama2_7b \
+--evaluator_path ../models/retrieval \
 --input_file ../data/$dataset/test_$dataset.txt \
---output_file ../data/$dataset/output/YOUR_OUTPUT_FILE \
+--output_file ../data/$dataset/output/popqa_output.txt  \
 --internal_knowledge_path ../data/$dataset/ref/correct \
 --external_knowledge_path ../data/$dataset/ref/incorrect \
 --combined_knowledge_path ../data/$dataset/ref/ambiguous \
