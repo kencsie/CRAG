@@ -1,0 +1,19 @@
+version: "3.9"
+services:
+  CRAG:
+    image: nvidia/cuda:13.0.0-cudnn-devel-ubuntu22.04
+
+    # If using GPU:
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+
+    volumes:
+    - /home/ken/CRAG:/workspace
+
+    # Command to override the default CMD in the Dockerfile (optional)
+    command: ["sleep", "infinity"]
