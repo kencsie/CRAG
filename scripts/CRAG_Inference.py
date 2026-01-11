@@ -272,6 +272,9 @@ def main():
             pred = generator.generate([prompt], sampling_params)
             preds.append(postprocess_answer_option_conditioned(pred[0].outputs[0].text))
 
+    folder_path = os.path.dirname(args.output_file)
+    if folder_path:
+        os.makedirs(folder_path, exist_ok=True)
     with open(args.output_file, 'w') as f:
         f.write('\n'.join(preds))
 
