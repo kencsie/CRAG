@@ -13,6 +13,7 @@ conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/ma
 conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/r
 conda create -n CRAG python=3.11 -y
 conda activate CRAG
+pip install torch==2.1.2
 pip install https://github.com/Dao-AILab/flash-attention/releases/download/v2.2.2/flash_attn-2.2.2+cu122torch2.1cxx11abiTRUE-cp311-cp311-linux_x86_64.whl
 pip install -r requirements.txt
 # 為了支援舊版程式，需要降版本
